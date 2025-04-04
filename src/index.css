@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.meal-card {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.meal-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+/* Flex container for the meal planner */
+.meal-planner-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-card:hover {
+  transform: scale(1.02);
+}
+
+/* Title */
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Input Groups */
+.input-group {
+  margin-top: 20px;
+  text-align: left;
+}
+.input-group label {
+  font-weight: 600;
+  color: #fffefe;
+}
+.input-grp{
+  margin-top: 20px;
+  text-align: left;
+
+}
+.input-grp label {
+  font-weight: 600;
+  color: #fefefe;
+}
+
+/* Select Boxes */
+.select-box {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.input-box {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-box ::placeholder{
+  color: #fff  !important;
+  opacity: 2;
+}
+.select-box:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Button */
+.generate-btn {
+  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+  border: none;
+  padding: 14px;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.generate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255, 118, 136, 0.5);
+}
+
+/* Meal Plan Container */
+.meal-list {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  width: 350px;
+  max-height: 400px;  /* Limiting height */
+  overflow-y: auto;  /* Enables scrolling */
+  transition: all 0.3s ease-in-out;
+}
+
+.meal-list:hover {
+  transform: scale(1.02);
+}
+
+/* Meal Plan Title */
+.meal-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+/* Meal Sections */
+.meal-section {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer; /* Indicate collapsibility */
+  transition: all 0.3s ease;
+}
+.meal-section:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.meal-section h4 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: none; /* Hide by default */
+}
+
+.meal-section.active ul {
+  display: block; /* Show when active */
+}
+
+/* Meal Items */
+.meal-section li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fffefe;
+}
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Shopping List Section */
+.shopping {
+  background: rgba(255, 255, 255, 0.2); /* Transparent glass effect */
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  color: #fff;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shopping h4 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #54b91e; /* Gold color for heading */
+}
+
+.shopping ul {
+  list-style: none;
+  padding: 0;
+}
+
+.shopping li {
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.3); /* Slightly dark background */
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease;
+}
+
+.shopping li:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.shopping li::before {
+  content: "🛒"; /* Shopping cart emoji */
+  margin-right: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .meal-planner-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .glass-card,
+  .meal-list {
+    width: 100%;
+  }
+}
